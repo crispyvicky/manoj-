@@ -14,7 +14,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-   "/images/canva.jpeg",
+  "/images/canva.jpeg",
   "/images/capcyt.jpeg",
   "/images/click.jpeg",
   "/images/ga.jpeg",
@@ -138,10 +138,11 @@ const TechStack = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
+      const workElement = document.getElementById("work");
+      if (workElement) {
+        const threshold = workElement.offsetTop - window.innerHeight;
+        setIsActive(scrollY > threshold);
+      }
     };
 
     // Refresh ScrollTrigger to ensure correct layout after lazy loading

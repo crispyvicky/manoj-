@@ -32,7 +32,7 @@ const setCharacter = (
 
     Pant: {
       // Blue pants
-      color: "#1D4ED8",
+      color: "#dedfe3ff",
       roughness: 0.45,
       metalness: 0.1,
     },
