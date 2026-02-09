@@ -14,14 +14,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+   "/images/canva.jpeg",
+  "/images/capcyt.jpeg",
+  "/images/click.jpeg",
+  "/images/ga.jpeg",
+  "/images/linkdn.jpeg",
+  "/images/meta.jpeg",
+  "/images/n8n.jpeg",
+  "/images/wordprerd.jpeg",
+  "/images/pr.jpeg",
+  "/images/semrush.jpeg",
+  "/images/ps.jpeg",
+  "/images/notion.jpeg",
+  "/images/seo.jpeg",
+  "/images/yt.jpeg",
+  "/images/zapier.jpeg",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
@@ -173,7 +180,7 @@ const TechStack = () => {
 
   return (
     <div className="techstack">
-      <h2> My Techstack</h2>
+      <h2>Tools & Stack</h2>
 
       <Canvas
         shadows

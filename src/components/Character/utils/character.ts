@@ -24,8 +24,8 @@ const setCharacter = (
   // Updated modern palette
   const materialMap: Record<string, MaterialConfig> = {
     BODYSHIRT: {
-      // White shirt
-      color: "#FFFFFF",
+      // Sky blue shirt
+      color: "#87CEEB",
       roughness: 0.4,
       metalness: 0.05,
     },
@@ -50,15 +50,15 @@ const setCharacter = (
     },
 
     // Skin
-    Ear001: { color: "#F6B78B" },
-    Neck: { color: "#F6B78B" },
-    Hand: { color: "#F6B78B" },
-    Plane007: { color: "#F6B78B" },
-    Cube002: { color: "#F6B78B" },
+    Ear001: { color: "#C48B60" },
+    Neck: { color: "#C48B60" },
+    Hand: { color: "#C48B60" },
+    Plane007: { color: "#C48B60" },
+    Cube002: { color: "#C48B60" },
 
     // Hair & brows
-    hair: { color: "#020617", roughness: 0.4, metalness: 0.15 },
-    Eyebrow: { color: "#020617", roughness: 0.5, metalness: 0.1 },
+    hair: { color: "#020617", roughness: 0.8, metalness: 0.05 },
+    Eyebrow: { color: "#020617", roughness: 0.8, metalness: 0.05 },
   };
 
   const createMaterialFromConfig = (config: MaterialConfig) => {
@@ -111,7 +111,7 @@ const setCharacter = (
             // -------------------------------------------------
             const fontLoader = new FontLoader();
             fontLoader.load("https://threejs.org/examples/fonts/helvetiker_regular.typeface.json", (font) => {
-              const textGeo = new TextGeometry("VICKY", {
+              const textGeo = new TextGeometry("MANOJ", {
                 font,
                 size: 0.15,
                 height: 0.02,

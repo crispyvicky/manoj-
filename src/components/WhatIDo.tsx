@@ -95,26 +95,25 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
+              <h3>GROWTH</h3>
               <h4>Description</h4>
               <p>
-                I build fast, modern and immersive digital experiences. From
-                full-stack web apps to 3D interactive websites, everything I
-                create focuses on performance, clean architecture.
+                I build organic growth systems using SEO, LinkedIn optimization, and
+                high-performance websites. My focus is on long-term visibility,
+                authority positioning, and measurable traffic that compounds over
+                time.
               </p>
 
               <h5>Skillset & Tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">WebGL</div>
-                <div className="what-tags">CSS / SCSS</div>
-                <div className="what-tags">MySQL</div>
+                <div className="what-tags">SEO</div>
+                <div className="what-tags">LinkedIn Growth</div>
+                <div className="what-tags">Google Search Console</div>
+                <div className="what-tags">Google Analytics</div>
+                <div className="what-tags">WordPress</div>
+                <div className="what-tags">Authority Building</div>
+                <div className="what-tags">Traffic Systems</div>
+                <div className="what-tags">Lead Gen</div>
               </div>
 
               <div className="what-arrow"></div>
@@ -143,24 +142,24 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>CONTENT</h3>
               <h4>Description</h4>
               <p>
-                I design visuals that feel alive — combining 3D, motion and
-                modern UI to create memorable digital experiences.
+                I turn expertise into discoverable assets through video, visual
+                storytelling, and content strategy. I design for humans, algorithms,
+                and AI discovery to ensure your brand gets found and trusted.
               </p>
 
               <h5>Skillset & Tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                {/* <div className="what-tags">ZBrush</div> */}
-                <div className="what-tags">3D Animation</div>
-                {/* <div className="what-tags">Rigging</div> */}
-                <div className="what-tags">Modelling</div>
-                <div className="what-tags">Motion Graphics</div>
-                {/* <div className="what-tags">Character Design</div> */}
-                <div className="what-tags">UI/UX Design</div>
-                <div className="what-tags">Branding</div>
+                <div className="what-tags">Social Media</div>
+                <div className="what-tags">Video Editing</div>
+                <div className="what-tags">Adobe Suite</div>
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Canva</div>
+                <div className="what-tags">Storytelling</div>
+                <div className="what-tags">Brand Design</div>
+                <div className="what-tags">Content Strategy</div>
               </div>
 
               <div className="what-arrow"></div>
