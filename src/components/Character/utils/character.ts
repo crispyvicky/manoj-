@@ -2,6 +2,7 @@
 import * as THREE from "three";
 import { DRACOLoader, GLTF, GLTFLoader, FontLoader, TextGeometry } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
+import { createNoiseTexture } from "./textureUtils";
 
 type MaterialConfig = {
   color: string;
@@ -9,6 +10,9 @@ type MaterialConfig = {
   metalness?: number;
   emissive?: string;
   emissiveIntensity?: number;
+  side?: THREE.Side;
+  bumpMap?: THREE.Texture;
+  bumpScale?: number;
 };
 
 const setCharacter = (
@@ -22,6 +26,7 @@ const setCharacter = (
   loader.setDRACOLoader(dracoLoader);
 
   // Updated modern palette
+  const noiseTexture = createNoiseTexture(512, 0.5); // Generate noise texture
   const materialMap: Record<string, MaterialConfig> = {
     BODYSHIRT: {
       // Sky blue shirt
@@ -57,7 +62,14 @@ const setCharacter = (
     Cube002: { color: "#C48B60" },
 
     // Hair & brows
-    hair: { color: "#020617", roughness: 0.8, metalness: 0.05 },
+    hair: {
+      color: "#080402", // Slightly lighter black for texture visibility
+      roughness: 0.9, // Higher roughness for frizz
+      metalness: 0.0,
+      side: THREE.DoubleSide,
+      bumpMap: noiseTexture,
+      bumpScale: 0.15,
+    },
     Eyebrow: { color: "#020617", roughness: 0.8, metalness: 0.05 },
   };
 
@@ -66,6 +78,9 @@ const setCharacter = (
       color: new THREE.Color(config.color),
       roughness: config.roughness ?? 0.6,
       metalness: config.metalness ?? 0.1,
+      side: config.side ?? THREE.FrontSide,
+      bumpMap: config.bumpMap ?? null,
+      bumpScale: config.bumpScale ?? 0,
     });
 
     if (config.emissive) {

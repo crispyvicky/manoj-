@@ -1,15 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@font-face {
+  font-family: 'Bedross';
+  src: url('./assets/fonts/Bedross-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Bedross-Regular.woff') format('woff'),
+    url('./assets/fonts/Bedross-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bedross';
+  src: url('./assets/fonts/Bedross-Italic.woff2') format('woff2'),
+    url('./assets/fonts/Bedross-Italic.woff') format('woff'),
+    url('./assets/fonts/Bedross-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
 
 :root {
-  font-family: "Geist", sans-serif;
+  font-family: "Bedross", sans-serif;
+
+  /* Color Variables - Dark Mode (Default) */
+  --bg-primary: #0b080c;
+  --text-primary: #eae5ec;
+  --accent-color: #FF6B35;
+  /* Orange */
+  --accent-glow: rgba(255, 107, 53, 0.5);
 
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 1.5;
   scroll-behavior: smooth;
   color-scheme: light dark;
-  color: #eae5ec;
-  background-color: var(--backgroundColor);
+
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,10 +42,16 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  --accentColor: #00ff88;
-  --backgroundColor: #0b080c;
   --vh: 100vh;
   --vh: 100svh;
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  --accent-color: #FF4500;
+  /* Darker Orange for better contrast on white */
+  --accent-glow: rgba(255, 69, 0, 0.3);
 }
 
 h1,
@@ -30,7 +60,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Geist", sans-serif;
+  font-family: "Bedross", sans-serif;
 }
 
 body {
@@ -43,7 +73,7 @@ a {
 }
 
 a:hover {
-  color: var(--accentColor);
+  color: var(--accent-color);
 }
 
 main {
@@ -66,7 +96,8 @@ main {
 body {
   margin: 0;
   height: auto;
-  background-color: #000;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   flex-grow: 1;
   --cWidth: calc(100% - 30px);
   --cMaxWidth: 1920px;

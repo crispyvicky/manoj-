@@ -21,8 +21,8 @@
   position: fixed;
   width: 300px;
   height: 300px;
-  background-color: #fb8dff;
-  box-shadow: inset -50px 40px 50px rgba(84, 0, 255, 0.6);
+  background-color: var(--accent-color);
+  box-shadow: inset -50px 40px 50px var(--accent-glow);
   filter: blur(60px);
   border-radius: 50%;
   animation: loadingCircle 5s linear infinite;
@@ -35,7 +35,7 @@
   height: 130px;
   background-image: linear-gradient(0deg,
       transparent,
-      var(--backgroundColor) 70%);
+      var(--bg-primary) 70%);
   pointer-events: none;
   z-index: 12;
   opacity: 0;
@@ -61,8 +61,8 @@
   display: none;
   width: 300px;
   height: 300px;
-  background-color: #fb8dff;
-  box-shadow: inset -50px 40px 50px rgba(84, 0, 255, 0.6);
+  background-color: var(--accent-color);
+  box-shadow: inset -50px 40px 50px var(--accent-glow);
   filter: blur(50px);
   border-radius: 50%;
   animation: loadingCircle2 5s linear infinite;
@@ -94,9 +94,9 @@
   width: 400px;
   height: 400px;
   z-index: 1;
-  background-color: #f59bf8;
-  transform: translate(-50%, 36%) scaleX(1.4);
-  box-shadow: inset 66px 35px 85px 0px rgba(85, 0, 255, 0.65);
+  background-color: var(--accent-glow);
+  /* transform: translate(-50%, 36%) scaleX(1.4); */
+  box-shadow: inset 66px 35px 85px 0px var(--accent-glow);
   filter: blur(50px);
   border-radius: 50%;
   top: 50%;
@@ -125,7 +125,7 @@
   height: 250px;
   background-image: linear-gradient(to bottom,
       transparent,
-      var(--backgroundColor) 70%);
+      var(--bg-primary) 70%);
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
@@ -137,7 +137,7 @@
   content: "";
   width: 100vw;
   height: 700px;
-  background-color: var(--backgroundColor);
+  background-color: var(--bg-primary);
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -177,7 +177,7 @@
 
 .landing-intro h2 {
   margin: 0;
-  color: var(--accentColor);
+  color: var(--accent-color);
   font-size: 22px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -209,7 +209,7 @@
   font-size: 22px;
   letter-spacing: 2px;
   font-weight: 300;
-  color: var(--accentColor);
+  color: var(--accent-color);
   margin: 0;
 }
 
@@ -234,7 +234,7 @@
 }
 
 h2.landing-info-h2 {
-  color: #c481ff;
+  color: var(--accent-color);
   font-size: 42px;
   width: 120%;
   margin: 0;
@@ -256,7 +256,7 @@ h2.landing-info-h2 {
   height: 120%;
   z-index: 3;
   background-image: linear-gradient(0deg,
-      var(--backgroundColor) 40%,
+      var(--bg-primary) 40%,
       rgba(0, 0, 0, 0) 110%);
   top: 0;
   left: 0;
