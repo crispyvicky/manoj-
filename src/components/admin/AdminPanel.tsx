@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useBlog, Blog } from "../../context/BlogContext";
+import { useBlog, BlogDisplay } from "../../context/BlogContext";
 import "../styles/Admin.css";
 
 const ADMIN_PASSWORD = "manoj2026";
@@ -54,7 +54,7 @@ const AdminPanel = () => {
         setTimeout(() => setSuccessMessage(""), 3000);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const tagsArray = formData.tags
             .split(",")
@@ -62,10 +62,10 @@ const AdminPanel = () => {
             .filter(Boolean);
 
         if (editingId) {
-            updateBlog(editingId, { ...formData, tags: tagsArray });
+            await updateBlog(editingId, { ...formData, tags: tagsArray });
             showSuccess("Blog updated successfully!");
         } else {
-            addBlog({ ...formData, tags: tagsArray });
+            await addBlog({ ...formData, tags: tagsArray });
             showSuccess("Blog created successfully!");
         }
         setFormData(defaultFormData);
@@ -73,7 +73,7 @@ const AdminPanel = () => {
         setView("list");
     };
 
-    const handleEdit = (blog: Blog) => {
+    const handleEdit = (blog: BlogDisplay) => {
         setFormData({
             title: blog.title,
             excerpt: blog.excerpt,
@@ -86,12 +86,12 @@ const AdminPanel = () => {
             readTime: blog.readTime,
             tags: blog.tags.join(", "),
         });
-        setEditingId(blog.id);
+        setEditingId(blog.id ?? null);
         setView("form");
     };
 
-    const handleDelete = (id: string) => {
-        deleteBlog(id);
+    const handleDelete = async (id: string) => {
+        await deleteBlog(id);
         setDeleteConfirmId(null);
         showSuccess("Blog deleted successfully!");
     };

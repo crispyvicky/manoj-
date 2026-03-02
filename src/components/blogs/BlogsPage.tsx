@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useBlog, Blog } from "../../context/BlogContext";
+import { useBlog, BlogDisplay } from "../../context/BlogContext";
 import "../styles/Blogs.css";
 
 const categories = ["All", "Technology", "Design", "Development", "Thoughts"];
@@ -116,7 +116,7 @@ const BlogsPage = () => {
 
             {/* Blog Grid */}
             <div className="blogs-grid">
-                {regularBlogs.map((blog: Blog, index: number) => (
+                {regularBlogs.map((blog: BlogDisplay, index: number) => (
                     <Link
                         to={`/blogs/${blog.id}`}
                         key={blog.id}
