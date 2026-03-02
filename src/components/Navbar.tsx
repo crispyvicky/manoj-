@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -28,10 +29,11 @@ const Navbar = () => {
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
+        // Skip links without data-href (e.g., react-router Links)
+        let section = (e.currentTarget as HTMLAnchorElement).getAttribute("data-href");
+        if (!section) return;
         if (window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
           smoother.scrollTo(section, true, "top top");
         }
       });
@@ -68,6 +70,11 @@ const Navbar = () => {
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
             </a>
+          </li>
+          <li>
+            <Link to="/blogs" style={{ textDecoration: "none" }}>
+              <HoverLinks text="BLOGS" />
+            </Link>
           </li>
           <li>
             <ThemeToggle />
