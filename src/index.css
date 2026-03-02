@@ -8,6 +8,15 @@
 }
 
 @font-face {
+  font-family: 'Silverush';
+  src: url('/silverush-classic-elegant-sans-serif-logo-font-2026-02-05-03-08-47-utc/Web-TT/Silverush.woff2') format('woff2'),
+    url('/silverush-classic-elegant-sans-serif-logo-font-2026-02-05-03-08-47-utc/Web-TT/Silverush.woff') format('woff'),
+    url('/silverush-classic-elegant-sans-serif-logo-font-2026-02-05-03-08-47-utc/Web-TT/Silverush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Bedross';
   src: url('./assets/fonts/Bedross-Italic.woff2') format('woff2'),
     url('./assets/fonts/Bedross-Italic.woff') format('woff'),
@@ -17,7 +26,7 @@
 }
 
 :root {
-  font-family: "Bedross", sans-serif;
+  font-family: "Silverush", sans-serif;
 
   /* Color Variables - Dark Mode (Default) */
   --bg-primary: #0b080c;
